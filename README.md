@@ -15,6 +15,10 @@ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 cargo install --path circom
 ```
 
+#### Install snarkjs
+```
+npm install -g snarkjs
+```
 
 ### Install dependencies
 

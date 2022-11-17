@@ -29,14 +29,14 @@ cd "$OUTPUT_JS"
 
 node generate_witness.js $WASM $INPUT witness.wtns
 
-snarkjs groth16 setup $R1CS $PTAU "$1_0000.zkey"
+snarkjs groth16 setup $R1CS $PTAU "$2.zkey"
 
-snarkjs zkey contribute "$1_0000.zkey" "$1_0001.zkey" --name="1st Contributor Name" -v
+snarkjs zkey contribute "$2.zkey" "$2_final.zkey" --name="1st Contributor Name" -v
 
-snarkjs zkey export verificationkey "$1_0001.zkey" verification_key.json
+snarkjs zkey export verificationkey "$2_final.zkey" verification_key.json
 
-snarkjs groth16 prove "$1_0001.zkey" witness.wtns proof.json public.json
+snarkjs groth16 prove "$2_final.zkey" witness.wtns proof.json public.json
 
 snarkjs groth16 verify verification_key.json public.json proof.json
 
-snarkjs zkey export solidityverifier "$1_0001.zkey" "$2_verifier.sol"
+snarkjs zkey export solidityverifier "$2_final.zkey" "$2_verifier.sol"
