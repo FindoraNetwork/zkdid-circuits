@@ -15,12 +15,19 @@ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 cargo install --path circom
 ```
 
-### Build Circuits
+
+### Install dependencies
 
 ```
 npm install
 ```
 
+### Download ptau files for bn128
+```
+./download_ptau.sh
+```
+
+### Build Circuits
 ```
 ./build.sh
 ```
